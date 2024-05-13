@@ -1,0 +1,92 @@
+
+     <div class="hero overlay" style="background-image: url('/assets/images/home.jpg');">
+      <div class="container hero-content">
+        <div class="row align-items-center">
+          <div class="col-lg-5 ml-auto">
+            <h1 class="text-white mb-4">Dance Odyssey</h1>
+            <p class="mb-4">Step into the rhythm of your dance journey! Explore, compete, and connect in our vibrant dance community. Welcome to your stage!</p>
+            <div id="date-countdown"></div>
+            <p>
+              <a href="#" class="btn btn-primary py-3 px-4 mr-3">Register</a>
+              <a href="#" class="more light">Learn More</a>
+            </p>  
+          </div>
+        </div>
+      </div>
+     
+    </div>
+      <style>
+        .hero-content {
+          margin-left: -20px; /* Adjust the value as needed */
+        }
+      
+        .hero-content h1,
+        .hero-content p {
+          margin-left: -280px; /* Adjust the value as needed */
+        }
+      </style>
+    
+  <br><br> 
+  
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <form action="#">
+       
+           
+            <div class="form-group">
+  
+  
+              <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Duration</th>
+                        <th>level</th>
+                        <th>Actions</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody class="table-border-bottom-0">
+                    <tr *ngFor="let course of Courses">
+                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i>
+                         <strong>{{course.courseName}}</strong></td>
+                        <td>{{course.category}}</td>
+                        <td>{{course.durationInHours}}</td>
+                        <td><span
+                                class="badge bg-label-primary me-1">{{course.requiredSkillLevel}}</span>
+                        </td>
+                        
+                            <td>
+                                
+                       
+
+                                  <button [routerLink]="['/modifier', course.courseID]" class="btn btn-primary py-3 px-5">Modifer Courses</button>
+                             
+                                
+                              </td>
+                              
+                              <td>
+                                <button (click)="supprimerCours(course.courseID)" class="btn btn-primary py-3 px-5">Supprimer</button>
+                              </td>
+                              <td>
+                                <button [routerLink]="['/addAnnulation', course.courseID]" class="btn btn-primary py-3 px-5">Annnulation</button>
+                              </td>
+
+                        
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+          </form> 
+        </div>
+       
+    </div>
+  
+  
+  
+    
+                       
+                    
